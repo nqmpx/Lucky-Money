@@ -14,7 +14,7 @@ openModal.addEventListener("click", function () {
     if (money === null) {
         const luckyNumber = parseInt(lucky.value);
         if (luckyNumber == 8 || luckyNumber == 3 || luckyNumber == 6 || luckyNumber == 30) {
-            money = Math.random() * (50000 - 1000) + 1000;
+            money = Math.random() * (50000 - 30000) + 30000;
         } else {
             money = Math.random() * (10000 - 1000) + 1000;
         }
