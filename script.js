@@ -1,10 +1,9 @@
-import 'https://tomashubelbauer.github.io/github-pages-local-storage/index.js';
 
 let modalContent = document.querySelector(".pop-up");
 let openModal = document.querySelector(".rut");
 let closeModal = document.querySelector(".close-pop-up");
 let blurBg = document.querySelector(".blur-bg");
-let money = localStorage.getItem('withdrawnAmount');
+let money = null;
 let moneyElement = document.querySelector('.money')
 let lucky = document.querySelector('.lucky-number')
 
@@ -12,7 +11,7 @@ let lucky = document.querySelector('.lucky-number')
 openModal.addEventListener("click", function () {
     modalContent.classList.remove("hidden-pop-up");
     blurBg.classList.remove("hidden-blur");
-    if (!money) {
+    if (money === null) {
         const luckyNumber = parseInt(lucky.value);
         if (luckyNumber == 8 || luckyNumber == 3 || luckyNumber == 6 || luckyNumber == 30) {
             money = Math.random() * (50000 - 1000) + 1000;
@@ -21,7 +20,6 @@ openModal.addEventListener("click", function () {
         }
         money = Math.round(money);
         money = money.toLocaleString();
-        localStorage.setItem('withdrawnAmount', money);
         moneyElement.textContent = money + 'đ';
     }
     else{
