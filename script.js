@@ -2,7 +2,7 @@ let modalContent = document.querySelector(".pop-up");
 let openModal = document.querySelector(".rut");
 let closeModal = document.querySelector(".close-pop-up");
 let blurBg = document.querySelector(".blur-bg");
-let money = localStorage.getItem('withdrawnAmount');
+let money = sessionStorage.getItem('withdrawnAmount');
 let moneyElement = document.querySelector('.money')
 let lucky = document.querySelector('.lucky-number')
 
@@ -19,7 +19,7 @@ openModal.addEventListener("click", function () {
         }
         money = Math.round(money);
         money = money.toLocaleString();
-        localStorage.setItem('withdrawnAmount', money);
+        sessionStorage.setItem('withdrawnAmount', money);
         moneyElement.textContent = money + 'đ';
     }
     else{
