@@ -10,7 +10,7 @@ let lucky = document.querySelector('.lucky-number')
 openModal.addEventListener("click", function () {
     modalContent.classList.remove("hidden-pop-up");
     blurBg.classList.remove("hidden-blur");
-    if (money) {
+    if (!money) {
         const luckyNumber = parseInt(lucky.value);
         if (luckyNumber == 8 || luckyNumber == 3 || luckyNumber == 6 || luckyNumber == 30) {
             money = Math.random() * (50000 - 1000) + 1000;
